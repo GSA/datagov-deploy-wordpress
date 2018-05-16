@@ -1,19 +1,55 @@
-*.log
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/mu-plugins/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
 
-/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
+.DS_Store
+.vagrant
+secrets.yml
+ansible-secret.txt
+ansible/*.retry
 
+# Ignoring symlinks
+#config/
+src/
+
+# Ignore everything in these directories
+synced_folders/*
+
+# Except this .gitkeep file
+!synced_folders/.gitkeep
+
+# Intellij
+.idea
+/.project
+
+# NetBeans
+/nbproject/
+
+# Ansible
+vendor
+!ansible/roles/vendor
+authorized_keys
+*.retry
+!.env.j2
+ansible/inventories/ocsit
+ansible/inventories/mgmt-ocsit
+
+#SQL
+*.sql
+*.sql.gz
+.data
+
+# Terraform
+/terraform/terraform.tfvars
+.terraform
+/terraform/pilot/terraform.tfstate.backup
+/terraform/pilot/terraform.tfstate
+/terraform/target
+/cloud-formation/*/target
+
+# Kitchen
+.kitchen
