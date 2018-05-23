@@ -1,0 +1,45 @@
+# Install Ansible Roles
+# ---------------------
+# When making the Conductor image `ansible-galaxy install -r requirements.yml` is executed
+# using this file. Follow the instructions at http://docs.ansible.com/ansible/galaxy.html
+# to include any roles you want installed prior to running main.yml.
+
+- src: software/common/die-no-tags
+- src: software/common/misc
+- src: software/common/php-common
+- src: geerlingguy.git
+- src: geerlingguy.nginx
+- src: software/common/nginx-fixes
+- src: geerlingguy.php
+- src: geerlingguy.php-mysql
+- src: geerlingguy.php-memcached
+- src: heskethm.wp-cli
+- src: geerlingguy.composer
+- src: chusiang.vim-and-vi-mode
+- src: software/wordpress/datagov-sudo-2-init
+- src: software/common/secops-ssh
+- src: software/common/trendmicro
+- src: software/common/ansible-postfix
+- src: monitoring/fluentd/kernel
+- src: monitoring/fluentd/limits
+- src: monitoring/fluentd/td-agent
+
+#- software/common/die-no-tags
+#- { role: software/common/misc, tags: [provision, misc] }
+#- { role: software/common/php-common, tags: [provision] }
+#- { role: geerlingguy.git, tags: [git, provision] }
+#- { role: geerlingguy.nginx, tags: [nginx, provision] }
+#- { role: software/common/nginx-fixes, tags: [nginx, provision] }
+#- { role: geerlingguy.php, tags: [php, provision] }
+#- { role: geerlingguy.php-mysql, tags: [php, php-mysql, provision] }
+#- { role: geerlingguy.php-memcached, tags: [php, php-memcached, provision] }
+#- { role: heskethm.wp-cli, tags: [php, cli, provision] }
+#- { role: geerlingguy.composer, tags: [php, provision] }
+#- { role: chusiang.vim-and-vi-mode, tags: [provision, vim] }
+#- { role: software/wordpress/datagov-sudo-2-init, tags: [provision, deploy, deploy-rollback] }
+#- { role: software/common/secops-ssh, tags: [provision, secops, prod] }
+#- { role: software/common/trendmicro, tags: [provision, trendmicro, prod] }
+#- { role: software/common/ansible-postfix, tags: [provision, postfix, prod] }
+#- { role: monitoring/fluentd/kernel, tags: [frontend, harvester, fluentd, prod] }
+#- { role: monitoring/fluentd/limits, tags: [frontend, harvester, fluentd, prod] }
+#- { role: monitoring/fluentd/td-agent, tags: [frontend, harvester, fluentd, prod] }
