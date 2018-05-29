@@ -30,7 +30,7 @@ synced_folders/*
 /nbproject/
 
 # Ansible
-vendor
+# vendor
 !ansible/roles/vendor
 authorized_keys
 *.retry

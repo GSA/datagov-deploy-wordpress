@@ -7,7 +7,7 @@
 - src: software/common/die-no-tags
 - src: software/common/misc
 - src: software/common/php-common
-- src: geerlingguy.git
+- src: vendor/geerlingguy.git
 - src: geerlingguy.nginx
 - src: software/common/nginx-fixes
 - src: geerlingguy.php
