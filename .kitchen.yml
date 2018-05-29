@@ -6,10 +6,6 @@ driver:
   #http_proxy: <%= ENV['http_proxy'] || nil %>
   #https_proxy: <%= ENV['https_proxy'] || nil %>
 
-transport:
-  name: sftp
-  max_ssh_sessions: 5
-
 provisioner:
   name: ansible_playbook
   roles_path: wordpress/
@@ -27,22 +23,32 @@ provisioner:
   require_chef_for_busser: false
   require_ruby_for_busser: false
 
-platforms:
-  - name: ubuntu-14.04
-    driver: 
-    image: rndmh3ro/docker-ubuntu1404-ansible:latest   
-  - name: ubuntu-16.04
-    driver: 
-    image: rndmh3ro/docker-ubuntu1604-ansible:latest  
-  - name: centos-7
-    driver: 
-    image: rndmh3ro/docker-centos7-ansible:latest      
-
-suites:
-  - name: test
-
 #verifier:
 #  name: inspec
 #  sudo: true
 #  inspec_tests:
 #    - https://github.com/dev-sec/linux-baseline
+
+transport:
+  name: sftp
+  max_ssh_sessions: 5
+
+platforms:
+  - name: ubuntu-14.04
+    driver:
+    image: rndmh3ro/docker-ubuntu1404-ansible:latest   
+  - name: ubuntu-16.04
+    driver:
+    image: rndmh3ro/docker-ubuntu1604-ansible:latest  
+  - name: centos-7
+    driver:
+    image: rndmh3ro/docker-centos7-ansible:latest 
+
+suites:
+  - name: dev
+    driver:
+      name: vagrant
+  - name: test
+  - name: staging
+  - name: prod
+
