@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: ansible
+  name: ansible_playbook
 
 platforms:
   - name: ubuntu-16.04

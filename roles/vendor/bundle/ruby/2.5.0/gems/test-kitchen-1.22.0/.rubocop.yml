@@ -1,0 +1,5 @@
+Naming/FileName:
+  Exclude:
+    - 'support/**/*'
+Layout/EndOfLine:
+  EnforcedStyle: lf
