@@ -1,0 +1,11 @@
+--- # WordPress Web AMI
+
+#- name: Initial prechecks
+#  hosts: wordpres-web
+#  remote_user: ubuntu
+
+- name: Provisioning WordPress Web AMI
+  hosts: "{{ datagov_web_hosts | default('wordpress-web') }}"
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo

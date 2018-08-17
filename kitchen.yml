@@ -4,6 +4,10 @@ driver:
 
 provisioner:
   name: ansible_playbook
+  roles_path: roles/
+  # requirements_path: requirements.yml
+  hosts: all
+  playbook: test/integration/default.yml
 
 platforms:
   - name: ubuntu-16.04
