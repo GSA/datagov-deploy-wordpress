@@ -1,46 +1,34 @@
-# PHP CircleCI 2.0 configuration file
+# WordPress CircleCI, which essentially launches Kitchen.
 version: 2
 jobs:
-  test-ubuntu-1404:
+  lint:
+    docker:
+      - image: particlekit/ansible-lint
+    steps:
+      - checkout
+      - run: make lint
+
+  test-kitchen:
+    machine: true
     working_directory: ~/datagov-deploy-wordpress
-    machine:
-      ruby:
-        version: 2.4
-      services:
-        - docker
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-bundle-{{ checksum "Gemfile.lock" }}
       - run:
-          name: Install bundler
-          command: gem install bundler
-      - run:
-          name: Install test-kitchen
-          command: bundle install
-      - run:
-          name: Run test-kitchen
-          command: bundle exec kitchen test ubuntu-14
-  test-ubuntu-1604:
-    working_directory: ~/ansible-fluentd
-    machine:
-      ruby:
-        version: 2.4
-      services:
-        - docker
-    steps:
-      - checkout
-      - run:
-          name: Install bundler
-          command: gem install bundler
-      - run:
-          name: Install test-kitchen
-          command: bundle install
+          name: Install dependencies
+          command: bundle install --path vendor/bundle
+      - save_cache:
+          key: v1-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run:
           name: Run test-kitchen
-          command: bundle exec kitchen test ubuntu-16
+          command: bundle exec kitchen test
 
 workflows:
   version: 2
-  build:
+  commit:
     jobs:
-      - test-ubuntu-1404
-      - test-ubuntu-1604
+    - test-kitchen
