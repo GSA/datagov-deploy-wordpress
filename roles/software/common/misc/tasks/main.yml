@@ -1,0 +1,26 @@
+---
+# Ansible `rm` module does not accept wildcards * yet.
+
+# Temporary fix for NTPD github_issues.
+- name: Fix NTPD issues
+  command: rm -rf /var/lib/dpkg/info/ntp*
+  tags:
+  - skip_ansible_lint
+
+# Temporary fix for Postfix issues.
+- name: Fix Postfix issues
+  command: rm -rf /var/lib/dpkg/info/postfix*
+  tags:
+  - skip_ansible_lint
+
+- name: Remove Postfix and NTP
+  apt: 
+    name: "{{ item }}"
+    state: absent
+    purge: yes
+    autoclean: yes
+    autoremove: yes
+  with_items:
+    - ntp 
+    - postfix 
+    
