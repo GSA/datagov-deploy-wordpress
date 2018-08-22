@@ -22,7 +22,7 @@ jobs:
       - save_cache:
           key: v1-bundle-{{ checksum "Gemfile.lock" }}
           paths:
-            - vendor/bundle
+            - roles/vendor/bundle
       - run:
           name: Run test-kitchen
           command: bundle exec kitchen test
