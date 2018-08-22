@@ -1,0 +1,5 @@
+--- 
+# Die if no tags have been defined
+
+- name: Dying
+  fail: msg="You have to specify tags using ' --tags tag', e.g., tags are 'provision', 'deploy', 'rollback'."
