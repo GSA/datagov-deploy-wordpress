@@ -20,9 +20,9 @@
   - { role: vendor/geerlingguy.git, tags: [git, provision] }
   - { role: vendor/geerlingguy.nginx, tags: [nginx, provision] }
   - { role: software/common/nginx-fixes, tags: [nginx, provision] }
-  - { role: geerlingguy.php, tags: [php, provision] }
-  - { role: geerlingguy.php-mysql, tags: [php, php-mysql, provision] }
-  - { role: geerlingguy.php-memcached, tags: [php, php-memcached, provision] }
+  - { role: vendor/geerlingguy.php, tags: [php, provision] }
+  - { role: vendor/geerlingguy.php-mysql, tags: [php, php-mysql, provision] }
+  - { role: vendor/geerlingguy.php-memcached, tags: [php, php-memcached, provision] }
   - { role: heskethm.wp-cli, tags: [php, cli, provision] }
   - { role: geerlingguy.composer, tags: [php, provision] }
   - { role: chusiang.vim-and-vi-mode, tags: [provision, vim] }
