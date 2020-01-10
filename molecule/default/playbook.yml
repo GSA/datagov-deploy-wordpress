@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   roles:
-    - role: wordpress
+    - role: datagov-deploy-wordpress
       crons_enabled: true
       datagov_team_email: team@example.com
       web_app_env: production
