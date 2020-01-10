@@ -2,8 +2,9 @@
 - name: Prepare
   hosts: all
   vars:
-    php_version: "7.3"
     php_default_version_debian: "7.3"
+    php_version: "7.3"
+    php_webserver_daemon: nginx
   pre_tasks:
     - name: Add repository for PHP
       apt_repository:
@@ -23,7 +24,6 @@
         include /etc/nginx/modules-enabled/*.conf;
     - role: geerlingguy.php-versions
     - role: geerlingguy.php
-      php_webserver_daemon: nginx
     - role: geerlingguy.php-mysql
     - role: geerlingguy.composer
     - role: sbaerlocher.wp-cli
