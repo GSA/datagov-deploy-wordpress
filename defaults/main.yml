@@ -66,4 +66,4 @@ wordpress_saml2_enabled: true
 
 wordpress_tls_host_certificate_filepath: /etc/ssl/certs/datagov_host.crt
 wordpress_tls_host_key_filepath: /etc/ssl/private/datagov_host.key
-wordpress_tls_protocols: TLSv1.1 TLSv1.2
+wordpress_tls_protocols: TLSv1.2 TLSv1.3
