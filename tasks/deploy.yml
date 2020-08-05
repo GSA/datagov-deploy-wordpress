@@ -24,9 +24,9 @@
 
 - name: Clone project files to {{ project_source_new_code_path }}
   git:
-    repo: "{{ project_git_repo }}"
+    repo: "{{ wordpress_project_git_repo }}"
     dest: "{{ project_source_new_code_path }}"
-    version: "{{ project_git_version }}"
+    version: "{{ wordpress_project_git_version }}"
     force: true
     umask: "0022"
   become: true
