@@ -19,8 +19,8 @@ env_content_protocol: http
 default_email_from: datagov@localhost
 
 # wordpress app code
-project_git_repo: https://github.com/GSA/datagov-wp-boilerplate.git
-project_git_version: master
+wordpress_project_git_repo: https://github.com/GSA/datagov-wp-boilerplate.git
+wordpress_project_git_version: master
 
 # Project path
 project_source_rollback_path: /var/www/datagov/rollback
