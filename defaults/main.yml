@@ -20,7 +20,7 @@ default_email_from: datagov@localhost
 
 # wordpress app code
 wordpress_project_git_repo: https://github.com/GSA/datagov-wp-boilerplate.git
-wordpress_project_git_version: master
+wordpress_project_git_version: main
 
 # Project path
 project_source_rollback_path: /var/www/datagov/rollback
