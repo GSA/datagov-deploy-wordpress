@@ -12,7 +12,7 @@
 - name: Copying Data.gov configuration for Nginx
   template:
     src: "datagov.nginx.conf"
-    dest: "/etc/nginx/sites-enabled/datagov.nginx.conf"
+    dest: "/etc/nginx/conf.d/default.conf"
   notify:
     - reload nginx
 
@@ -30,7 +30,6 @@
   with_items:
     - mariadb-client
     - php{{ wordpress_php_major_minor_version }}-zip
-    - nginx-extras
 
 - name: Remove previous deployment rollback folder
   file: path="{{ project_source_rollback_path }}" state=absent

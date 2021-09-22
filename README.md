@@ -20,9 +20,10 @@ composer. Add this role and its dependencies to your requirements.yml file.
   name: gsa.datagov-deploy-wordpress
 - src: geerlingguy.composer
 - src: geerlingguy.git
-- src: geerlingguy.nginx
 - src: geerlingguy.php
 - src: geerlingguy.php-versions
+- src: nginxinc.nginx
+
 ```
 
 Install with ansible-galaxy.
@@ -37,11 +38,11 @@ Example playbook.
   hosts: all
   roles:
     - role: geerlingguy.git
-    - role: geerlingguy.nginx
     - role: geerlingguy.php-versions
     - role: geerlingguy.php
     - role: geerlingguy.php-mysql
     - role: geerlingguy.php-memcached
+    - role: nginxinc.nginx
     - role: software/common/php-fixes
     - role: geerlingguy.composer
     - role: gsa.datagov-deploy-wordpress
